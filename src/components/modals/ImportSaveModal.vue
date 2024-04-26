@@ -56,7 +56,7 @@ export default {
       return this.player !== undefined;
     },
     inputIsDev() {
-      return (51 < this.player.version < 51.1 || this.player() == "devsave" || this.player().devSave) && GameSaveSerializer.SaveType != "devsave"
+      return ((51 < this.player.version && this.player.version < 51.1) || this.player() == "devsave" || this.player().devSave) && GameSaveSerializer.SaveType != "devsave"
     },
     inputIsSecret() {
       return isSecretImport(this.input) || Theme.isSecretTheme(this.input);
